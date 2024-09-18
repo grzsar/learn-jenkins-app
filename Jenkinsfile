@@ -6,10 +6,10 @@ pipeline {
             agent {
                 docker {
                     image 'node:18-alpine'
+                    reuseNode true
                 }
             }
             steps {
-                sh 'echo "With docker"'
                 sh '''
                     ls -la
                     node --version
